@@ -1,0 +1,29 @@
+#Задача 3 - время
+import random
+import time
+
+def bubble(n):
+	l = []
+	for _ in range(n):
+	    l.append(random.randint(0,100))
+	#print(*l)
+	for _ in range(len(l)):
+	    for i in range(len(l)-1):
+	        if l[i] > l[i+1]:
+	            l[i],l[i+1] = l[i+1],l[i]
+	#print(*l)
+
+start = time.time()
+bubble(10)
+end = time.time()
+print("При n = 10:", end - start)
+
+start = time.time()
+bubble(100)
+end = time.time()
+print("При n = 100:", end - start)
+
+start = time.time()
+bubble(1000)
+end = time.time()
+print("При n = 1000:", end - start)
